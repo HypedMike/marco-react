@@ -1,23 +1,53 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button } from './components/button';
+import { ProfilePicture } from './components/pp';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [buttons, setButtons] = useState([
+    {
+      name: "Loading",
+      link: "#"
+    }
+  ])
+
+  const [name, setName] = useState("Loading...");
+
+  const GetButtons = () => {
+    axios.get("data/links.json").then((res) => {
+      setButtons(res.data);      
+    })
+  }
+
+  const GetName = () => {
+    axios.get("data/name.txt").then((res) => {
+      setName(res.data);      
+    })
+  }
+
+  useEffect(() => {
+    GetButtons();
+    GetName();
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProfilePicture url="img/pp.jpg"></ProfilePicture>
+      <div>
+        <h1 style={{color: "white"}}>
+          {name}
+        </h1>
+      </div>
+      {
+        buttons.map((elem, i) => {
+          return (
+            <Button name={elem.name} img={elem.img} link={elem.link} key={i} />
+          )
+        })
+      }
     </div>
   );
 }

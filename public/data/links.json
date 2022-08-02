@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Instagram",
+        "link": "http://www.google.com",
+        "img": "placeholder.jpg"
+    },
+    {
+        "name": "Facebook",
+        "link": "http://www.google.com"
+    },
+    {
+        "name": "YouTube",
+        "link": "http://www.google.com"
+    },
+    {
+        "name": "Amazon",
+        "link": "http://www.google.com"
+    },
+    {
+        "name": "Spotify",
+        "link": "http://www.google.com"
+    },
+    {
+        "name": "OnlyFans",
+        "link": "http://www.google.com"
+    }
+]

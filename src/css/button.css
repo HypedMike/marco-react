@@ -1,0 +1,32 @@
+.button{
+    background-color: #ffe1a8;
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 50px;
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-width: 200px;
+}
+
+.button:hover{
+    animation: backlight 1s;
+}
+
+.button-img{
+    background-color: none;
+    animation:backlightbig 5s infinite;
+}
+
+@keyframes backlight {
+    0%{box-shadow: 0px 0px 0px white;}
+    50%{box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.452);}
+    100%{box-shadow: 0px 0px 0px white;}
+}
+
+@keyframes backlightbig {
+    0%{box-shadow: 0px 0px 90px white;}
+    50%{box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.452);}
+    100%{box-shadow: 0px 0px 90px white;}
+}
